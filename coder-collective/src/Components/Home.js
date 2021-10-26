@@ -6,13 +6,18 @@ import Sort from "./Sort";
 const Home = () => {
   const [users, setUsers] = useState([]);
   const [searchedData, setSearchedData] = useState(users);
+  const [like, setLike]=useState(true)
 
   useEffect(() => {
     fetch(`http://localhost:4000/coders`)
       .then((r) => r.json())
       .then((data) => setUsers(data))
       .catch(() => console.log("Run Server!"));
-  }, []);
+  }, [like]);
+
+  function addLike(){
+      setLike(like=>!like)
+  }
 
   function handleSearch(e) {
     const searchData = users.filter((user) => {
@@ -22,7 +27,7 @@ const Home = () => {
     console.log(searchData);
   }
 
-  function handleOnClick(){
+  function handleSortClick(){
     const sortedUsers = users.slice().sort((a,b) => {
           if(a.username > b.username ) return 1
           if(a.username < b.username ) return -1
@@ -31,16 +36,19 @@ const Home = () => {
       setSearchedData(sortedUsers)
 }
 
+
+
   useEffect(() => {
     setSearchedData(users);
   }, [users]);
 
+  
   return (
     <div>
       <Search handleSearch={handleSearch} users={users} />
-      <Sort handleOnClick={handleOnClick}/>
+      <Sort handleSortClick={handleSortClick}/>
       {searchedData.map((user) => (
-        <BlogCard user={user} />
+        <BlogCard addLike={addLike} key={user.id+2} user={user} />
       ))}
     </div>
   );
