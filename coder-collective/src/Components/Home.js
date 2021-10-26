@@ -2,11 +2,13 @@ import BlogCard from "./BlogCard";
 import Search from "./Search";
 
 
-const Home = ({users}) => {
+const Home = ({users, handleSearch}) => {
+
+    
 
 return(
     <div>
-        <Search/>
+        <Search handleSearch={handleSearch} users={users}/>
         {users.map(user=><BlogCard user={user}/>)}
 
     </div>
