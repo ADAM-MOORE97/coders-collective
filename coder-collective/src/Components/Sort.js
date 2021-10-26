@@ -1,12 +1,12 @@
 import React from 'react'
 
- function Sort({handleOnClick}) {
+ function Sort({handleSortClick}) {
     
     
     
     return (
         <div>
-            <button type="checkbox" onClick={handleOnClick}>Sort by Name</button>
+            <button type="checkbox" onClick={handleSortClick}>Sort by Name</button>
         </div>
     )
 }
