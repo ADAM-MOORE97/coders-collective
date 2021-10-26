@@ -1,10 +1,12 @@
 
 import React from 'react'
 
-function Search() {
+function Search({handleSearch}) {
+    
+    
     return (
         <div>
-            Search
+           <input type="text" id="searchBar" onChange={handleSearch}/>Search
         </div>
     )
 }
