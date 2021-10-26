@@ -33,26 +33,28 @@ export default App;
 
 
 
-// const [users, setUsers] = useState([]);
-// const [searchedData, setSearchedData] = useState(users);
+const [users, setUsers] = useState([]);
+const [searchedData, setSearchedData] = useState(users);
 
-// useEffect(() => {
-//     fetch(`http://localhost:4000/coders`)
-//         .then((r) => r.json())
-//         .then((data) => setUsers(data))
-//         .catch(() => console.log('Run Server!'));
-// }, []);
+useEffect(() => {
+    fetch(`http://localhost:4000/coders`)
+        .then((r) => r.json())
+        .then((data) => setUsers(data))
+        .catch(() => console.log('Run Server!'));
+}, []);
 
-// function handleSearch(e) {
-//     const searchData = users.filter(user => {
-//         return user.username.toLowerCase().includes(
-//             e.target.value.toLowerCase())
-//     })
-//     setSearchedData(searchData)
-//     console.log(searchData)
-// }
+function handleSearch(e) {
+    const searchData = users.filter(user => {
+        return user.username.toLowerCase().includes(
+            e.target.value.toLowerCase())
+    })
+    setSearchedData(searchData)
+    console.log(searchData)
+}
 
-// useEffect(() => {
-//     setSearchedData(users)
-// }, [users])
+useEffect(() => {
+    setSearchedData(users)
+}, [users])
 
+jkbkjb
+function(){}
