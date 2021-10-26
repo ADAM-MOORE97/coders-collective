@@ -12,7 +12,7 @@ const Home = () => {
         fetch(`http://localhost:4000/coders`)
             .then((r) => r.json())
             .then((data) => setUsers(data))
-            .catch(err => console.log('Run Server!'));
+            .catch(() => console.log('Run Server!'));
     }, []);
 
     function handleSearch(e) {
