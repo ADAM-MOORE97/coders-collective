@@ -71,10 +71,11 @@ const Home = () => {
       <div>
         <Search handleSearch={handleSearch} users={users} />
         <Sort handleSortClick={handleSortClick} />
-        <NewBlogger addNewBlogger={addNewBlogger} />
+       
         {searchedData.map((user) => (
           <BlogCard fetchPatch={fetchPatch} key={user.id + 2} user={user} />
         ))}
+         <NewBlogger addNewBlogger={addNewBlogger} />
       </div>
     );
   };

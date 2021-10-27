@@ -24,6 +24,7 @@ function App() {
         <Route exact path="/contact">
           <Contact />
         </Route>
+        
       </Switch>
     </>
   );
