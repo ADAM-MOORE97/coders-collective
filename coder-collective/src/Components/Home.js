@@ -6,7 +6,20 @@ import Sort from "./Sort";
 const Home = () => {
   const [users, setUsers] = useState([]);
   const [searchedData, setSearchedData] = useState(users);
-  const [like, setLike]=useState(true)
+  const [like, setLike] = useState(false)
+
+
+  //   useEffect(()=>{
+
+  //     fetch(`http://localhost:4000/coders/${userId}`,{
+  //         method: 'PATCH',
+  //         headers:{
+  //             'Content-Type': 'application/json'
+  //         },
+  //         body: JSON.stringify({likes:numlikes+1})
+  //     }).then(setLike(like=>!like))
+
+  // },[isPatch])
 
   useEffect(() => {
     fetch(`http://localhost:4000/coders`)
@@ -15,8 +28,20 @@ const Home = () => {
       .catch(() => console.log("Run Server!"));
   }, [like]);
 
-  function addLike(){
-      setLike(like=>!like)
+
+
+
+  function fetchPatch(user) {
+    let userid = user.id
+    let numLikes = user.likes
+    fetch(`http://localhost:4000/coders/${userid}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ likes: numLikes + 1 })
+    }).then(setLike(like => !like))
+
   }
 
   function handleSearch(e) {
@@ -27,14 +52,14 @@ const Home = () => {
     console.log(searchData);
   }
 
-  function handleSortClick(){
-    const sortedUsers = users.slice().sort((a,b) => {
-          if(a.username > b.username ) return 1
-          if(a.username < b.username ) return -1
-          else return 0
-      })
-      setSearchedData(sortedUsers)
-}
+  function handleSortClick() {
+    const sortedUsers = users.slice().sort((a, b) => {
+      if (a.username > b.username) return 1
+      if (a.username < b.username) return -1
+      else return 0
+    })
+    setSearchedData(sortedUsers)
+  }
 
 
 
@@ -42,13 +67,13 @@ const Home = () => {
     setSearchedData(users);
   }, [users]);
 
-  
+
   return (
     <div>
       <Search handleSearch={handleSearch} users={users} />
-      <Sort handleSortClick={handleSortClick}/>
+      <Sort handleSortClick={handleSortClick} />
       {searchedData.map((user) => (
-        <BlogCard addLike={addLike} key={user.id+2} user={user} />
+        <BlogCard fetchPatch={fetchPatch} key={user.id + 2} user={user} />
       ))}
     </div>
   );

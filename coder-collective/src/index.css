@@ -22,16 +22,7 @@ body {
 	}
 }
 
-.card {
-  /* Add shadows to create the "card" effect */
-  /* display: ; */
-  box-shadow: 2 8px 12px 2 black;
-  transition: 0.3s;
-  border-radius: 15px 15px 15px 5px;
-  width: 400px;
-  height: 400px;
-  background-color: white;
-}
+
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
