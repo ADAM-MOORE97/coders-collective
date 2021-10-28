@@ -1,6 +1,7 @@
 import BlogCard from "./BlogCard";
 import Search from "./Search";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
 import Sort from "./Sort";
 import NewBlogger from "./NewBlogger"
 const Home = () => {
@@ -71,13 +72,23 @@ const Home = () => {
       <div>
         <Search handleSearch={handleSearch} users={users} />
         <Sort handleSortClick={handleSortClick} />
-       
+       <HomeCards>
         {searchedData.map((user) => (
           <BlogCard fetchPatch={fetchPatch} key={user.id + 2} user={user} />
         ))}
+        </HomeCards>
          <NewBlogger addNewBlogger={addNewBlogger} />
       </div>
     );
   };
   export default Home;
+  
+  const HomeCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 100px;
+`
 
