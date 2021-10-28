@@ -22,7 +22,7 @@ function BlogCard({
         Link🚀
       </a>
       <br />
-      <button onClick={() => handleLikeBtn(user)}>Likes:{likes}</button>
+      <button onClick={() => handleLikeBtn(user)}>❤:{likes}</button>
     </CardContainer>
   );
 }
@@ -56,14 +56,14 @@ const CardContainer = styled.div`
   a {
     text-decoration: none;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: 15px;
     margin-right: 15px;
     font-size: 18px;
   }
   button {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     color: white;
     background-color: #121212;
     letter-spacing: 5px;

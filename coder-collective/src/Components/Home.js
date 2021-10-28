@@ -9,6 +9,7 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const [searchedData, setSearchedData] = useState(users);
     const [like, setLike] = useState(false);
+    const [clicked, setClicked] = useState(false)
 
 // GET
     useEffect(() => {
@@ -59,12 +60,14 @@ const Home = () => {
 
 // Sort By Name Alphabetically
     function handleSortClick() {
-      const sortedUsers = users.slice().sort((a, b) => {
+      setClicked(!clicked)
+      if(clicked=== true){const sortedUsers = users.slice().sort((a, b) => {
         if (a.username > b.username) return 1;
         if (a.username < b.username) return -1;
         else return 0;
       });
-      setSearchedData(sortedUsers);
+      setSearchedData(sortedUsers)}
+      else{setSearchedData(users)}
     }
 
 // All Child Components of HOME.js
