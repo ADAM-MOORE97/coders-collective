@@ -88,7 +88,9 @@ const Home = () => {
   flex-wrap: wrap;
   list-style: none;
   margin-left: 50px;
+  justify-content: center;
   margin-right: 50px;
   padding: 100px;
+  align-items: center;
 `
 

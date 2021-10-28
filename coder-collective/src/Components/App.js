@@ -36,7 +36,7 @@ export default App;
 const AppContainer = styled.div`
 background-color: #121212 ;
 height: 100%;
-
+font-family: ${props => props.theme.font.primary};
 margin-top: 0%;
 
 h1{
