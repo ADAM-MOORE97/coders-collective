@@ -7,7 +7,7 @@ import styled from 'styled-components';
     
     return (
         <SortStyle>
-            <button type="checkbox" onClick={handleSortClick}>Sort by Name</button>
+            <button type="checkbox" onClick={handleSortClick}>Sort by name</button>
         </SortStyle>
     )
 }

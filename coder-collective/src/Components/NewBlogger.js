@@ -23,7 +23,7 @@ function NewBlogger({ addNewBlogger }) {
   return (
     <div style={{justifyContent:"center", textAlign:"center"}}>
       <FormStyle onSubmit={handleFormSubmit}>
-        <h3>Add new blogger</h3>
+        <h3>Add New Blogger</h3>
         <input
           type="text"
           value={formData.username}
@@ -69,14 +69,27 @@ function NewBlogger({ addNewBlogger }) {
 export default NewBlogger;
 
 const FormStyle = styled.form`
-/* justify-content: center */
+  border-top: 1rem solid #4a545c;  
+    line-height: 0;
   h3 {
     color: #83a4a4;
     text-align: center;
     font-size: 48px;
   };
   input {
+    display: flex;
+ margin: 0 auto;     
+ justify-content: center;
     background-color:#83a4a4;
-    display: block;
+    width: 400px;
+    text-align: center;
+    margin-top: 5px;
+  }
+  button{
+      background-color: #657B81;
+      margin-top: 5px;
+      &:hover {
+      box-shadow: 4px 4px 12px 0px #a9cec2;
+    }
   }
 `

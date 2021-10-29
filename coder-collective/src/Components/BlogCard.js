@@ -35,7 +35,6 @@ const CardContainer = styled.div`
   border-radius: 15px 15px 15px 15px;
   width: 400px;
   height: 425px;
-  background-color: white;
   padding: 5px;
   margin: 20px;
   text-align: center;

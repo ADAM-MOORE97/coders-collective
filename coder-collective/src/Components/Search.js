@@ -7,7 +7,7 @@ function Search({handleSearch}) {
     
     return (
         <SearchStyle>
-           <input placeholder="Search Blogger" type="text" id="searchBar" onChange={handleSearch}/>
+           <input placeholder="Search blogger..." type="text" id="searchBar" onChange={handleSearch}/>
         </SearchStyle>
     )
 }
