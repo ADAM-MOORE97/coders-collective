@@ -17,6 +17,9 @@ export default Search;
 const SearchStyle = styled.div`
 input{
     float: right;
-    margin-top: 5px;
+    background-color: #83a4a4;
+    color: black;
+    width: 300px;
+    
  }
 `
