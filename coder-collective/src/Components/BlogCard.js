@@ -17,7 +17,7 @@ function BlogCard({
     <CardContainer>
       <h2>{username}</h2>
       <img alt="No image found" src={pictureUrl} width="100px" height="120" />
-      <p>{username}'s Blog:</p>
+      <p>{username}'s Blog</p>
       <a href={blog_link} target="blank">
         Link🚀
       </a>
